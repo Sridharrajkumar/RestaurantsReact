@@ -9,8 +9,26 @@ const Cart = (props) => {
   const cartCxt = useContext(CartContext)
   
   const TotalCartAmount = `$${cartCxt.totalAmount.toFixed(2)}`;
+
+ 
+
+  const cartItemAddHandler = (item) => {
+    cartCxt.addItem({ ...item, amount: 1 });
+  } 
+
+  const cartItemRemoveHandler = (id) => {
+      cartCxt.removeItem(id);
+  }
   
-  const Cartitem = <ul className={classes['cart-items']}>{cartCxt.items.map((item) => <CartItem key={item.id} name={item.name} price={item.price} amount={item.amount}/>)}
+  const Cartitem = <ul className={classes['cart-items']}>{cartCxt.items.map((item) =>
+    <CartItem
+      key={item.id}
+      name={item.name}
+      price={item.price}
+      amount={item.amount}
+      onRemove={cartItemRemoveHandler.bind(null, item.id)}
+      onAdd={cartItemAddHandler.bind(null, item)}
+    />)}
   </ul>
 
   return (
