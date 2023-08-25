@@ -1,9 +1,18 @@
+.product
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+
 .meal{
     display: flex;
     flex-direction: column;
     margin: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
+   
 }
 
 .meal h3{
@@ -22,3 +31,40 @@
     margin-top: 0.25rem;
     font-size: 1.25rem;
 }
+
+.form
+{ 
+
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.form input{
+    width :35%;
+    border-radius: 4px;
+}
+
+.form label{
+    font-weight: bold;
+}
+
+.form button {
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    background-color:  #8a2b06;
+    color:white;
+    border-radius: 20px; 
+    border-color: 1px solid #8a2b06; 
+    padding: 0.25rem 2rem;
+    
+ 
+ 
+ }
+ 
+ .form button:hover,
+ .form button:active{
+     background-color:#641e03;
+     border-color: #641e03;
+ }
